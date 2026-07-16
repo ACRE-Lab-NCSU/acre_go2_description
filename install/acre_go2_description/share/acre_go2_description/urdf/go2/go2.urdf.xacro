@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="go2_description" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find acre_go2_description)/urdf/go2/go2_base.xacro"/>
+  <xacro:include filename="$(find acre_go2_description)/urdf/livox/mid360.xacro"/>
+  <xacro:include filename="$(find acre_go2_description)/urdf/realsense/d435i.xacro"/>
+
+  <xacro:livox_frame parent_link="imu"/>  <!-- or "base", per your confirmed result -->
+
+  <xacro:d435i_mount parent_link="base_link">
+    <origin xyz="0.280 0 0.05" rpy="0 0 0"/>  <!-- measure your actual mount -->
+  </xacro:d435i_mount>
+</robot>

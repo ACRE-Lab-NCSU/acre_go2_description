@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="livox_frame" params="parent_link">
+    <link name="livox_frame">
+      <visual>
+        <origin xyz="0 0 0" rpy="1.5708 0.226893 3.14159"/>
+        <geometry><mesh filename="package://acre_go2_description/meshes/mid360.dae"/></geometry>
+      </visual>
+    </link>
+    <joint name="livox_frame_joint" type="fixed">
+      <origin xyz="0.1870 0.0 0.0803" rpy="0 0.226893 0"/>
+      <parent link="${parent_link}"/>
+      <child link="livox_frame"/>
+    </joint>
+  </xacro:macro>
+</robot>
